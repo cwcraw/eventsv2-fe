@@ -13,7 +13,7 @@ import Events from "./pages/events";
 import { authMiddleWare } from "./util/auth";
 
 import axios from "axios";
-
+axios.defaults.baseURL = "https://us-central1-eventsv2-3097d.cloudfunctions.net/api"
 export default function App() {
   // const history = useHistory;
 
@@ -65,7 +65,7 @@ export default function App() {
     axios
       .get("/user")
       .then((response) => {
-        console.log(response.data);
+        console.log(response);
         handleChangeHome({
           email: response.data.userCredentials.email,
           username: response.data.userCredentials.username,
@@ -108,6 +108,7 @@ export default function App() {
       email: loginState.email,
       password: loginState.password,
     };
+    
     axios
       .post("/login", userData)
       .then((response) => {
