@@ -1,2 +1,1 @@
-myprocess: sh -c 'cd ./view/ && npm start'
-
+web: start npm
