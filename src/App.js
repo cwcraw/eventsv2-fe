@@ -38,6 +38,10 @@ export default function App() {
     email: "",
   });
 
+  const [eventList, updateEventList] = useState({
+    eventList: []
+  });
+
   // function loadAccountPage(event) {
   //   updateRender({ render: true });
   // }
@@ -52,9 +56,10 @@ export default function App() {
   }
 
   function handleChangeHome(event) {
-    console.log("updating home", event, homeState);
     updateHome(event);
-    console.log("updated home", homeState);
+  }
+  function handleChangeEvents(event) {
+    updateEventList(event);
   }
 
   function componentWillMountHome() {
@@ -79,7 +84,32 @@ export default function App() {
         //   history.push("/login");
         // }
         console.log(error);
-        this.setState({ errorMsg: "Error in retrieving the data" });
+        // this.setState({ errorMsg: "Error in retrieving the data" });
+      });
+  }
+
+  function componentWillMountEvents() {
+    // authMiddleWare(history);
+    authMiddleWare();
+    const authToken = localStorage.getItem("AuthToken");
+    axios.defaults.headers.common = { Authorization: `${authToken}` };
+    axios
+      .get("/events")
+      .then((response) => {
+        console.log(response.data);
+        handleChangeEvents({
+          events: response.data
+        });
+      })
+      .then(() => {
+        console.log("homestate2", homeState);
+      })
+      .catch((error) => {
+        // if (error.response.status === 403) {
+        //   history.push("/login");
+        // }
+        console.log(error);
+        // this.setState({ errorMsg: "Error in retrieving the data" });
       });
   }
 
@@ -121,6 +151,7 @@ export default function App() {
         // console.log(homeState)
         // history.push("/");
         componentWillMountHome();
+        componentWillMountEvents()
       })
       .catch((error) => {});
   }
@@ -162,7 +193,7 @@ export default function App() {
                 loadEventPage={loadEventPage}
                 logoutHandler={logoutHandler}
               /> */}
-      <Events homeProp={homeState} />
+      <Events homeProp={homeState} eventsProp = {eventList}/>
     </div>
   );
   // return (
