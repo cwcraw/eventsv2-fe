@@ -15,18 +15,12 @@ const useStyles = makeStyles({
 });
 
 
-export default function Login(props) {
+export default function EventDisplay(props) {
   const classes = useStyles();
-  console.log(props)
-  console.log(props.eventsProp.events)
   let eventArray = props.eventsProp.events || [{event:''}]
-  console.log(eventArray[0])
   return <div>
       {props.homeProp.email}
       {props.homeProp.username}
-      
-      {eventArray.map(el => <li>{el.event}</li>)}
-      test
 
       <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
