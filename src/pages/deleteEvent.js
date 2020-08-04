@@ -16,12 +16,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function DeleteEvent(props) {
     const classes = useStyles();
     let eventArray = props.eventsProp.events || [{id:'',event:' '}]
-
   return (
     <> 
+              <h2>Please delete an event here</h2>
+
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Select Event Title</InputLabel>
         <Select
@@ -39,7 +42,6 @@ export default function DeleteEvent(props) {
       <form>
         <Button
           type="delete"
-          fullWidth
           variant="contained"
           color="primary"
           onClick={(e) => {

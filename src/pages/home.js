@@ -7,17 +7,14 @@ import List from "@material-ui/core/List";
 import NotesIcon from "@material-ui/icons/Notes";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-// import Events from "./events";
-// import Account from "./account";
+
 
 export default function Home(props) {
-  console.log(props);
   return (
     <div>
       <List>
         <ListItem
           button
-          key="Event"
           onClick={(e) => {
             props.loadEventPage(e);
           }}
@@ -31,7 +28,6 @@ export default function Home(props) {
 
         <ListItem
           button
-          key="Account"
           onClick={(e) => {
             props.loadAccountPage(e);
           }}
@@ -45,7 +41,6 @@ export default function Home(props) {
 
         <ListItem
           button
-          key="Logout"
           onClick={() => {
             props.logoutHandler(props.history);
           }}

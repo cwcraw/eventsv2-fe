@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Account(props) {
-    console.log(props)
   return (
     <>
       <div>Welcome to your event tracker, {props.account.username}</div>

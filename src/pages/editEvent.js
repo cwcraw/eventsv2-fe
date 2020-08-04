@@ -22,12 +22,12 @@ export default function AddEvent(props) {
     let eventArray = props.eventsProp.events || [{id:'',event:' '}]
   return (
     <> 
+          <h2>Please edit your events here</h2>
+
       <FormControl className={classes.formControl}>
         <InputLabel id="demo-simple-select-label">Select Event Title</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
           name="eventId"
-          id="demo-simple-select"
           value={props.editEventProp.id}
           onChange={(e) => {props.handleChangeEditEvent(e)}}
         > 
@@ -69,7 +69,7 @@ export default function AddEvent(props) {
           margin="normal"
           required
           fullWidth
-          name="Date and Time"
+          name="time"
           type="Datetime-local"
           id="editTime"
           autoComplete="Date"
@@ -93,7 +93,6 @@ export default function AddEvent(props) {
         />
         <Button
           type="submit"
-          fullWidth
           variant="contained"
           color="primary"
           onClick={(e) => {

@@ -1,13 +1,25 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-// import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
 
-// import axios from "axios";
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 320,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export default function SignUp(props) {
+  const classes = useStyles();
+
   return (
     <>
+    <div className={classes.formControl}>
+      <form  className={classes.formControl}>
       <TextField
         variant="outlined"
         required
@@ -58,9 +70,9 @@ export default function SignUp(props) {
           props.handleChangeSignUp(e);
         }}
       />
+      </form>
       <Button
         type="submit"
-        fullWidth
         variant="contained"
         color="primary"
         onClick={(e) => {
@@ -69,6 +81,7 @@ export default function SignUp(props) {
       >
         Sign Up
       </Button>
+      </div>
     </>
   );
 }

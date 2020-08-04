@@ -5,6 +5,8 @@ import TextField from "@material-ui/core/TextField";
 export default function AddEvent(props) {
     return (
       <>
+                    <h2>Please add an event here</h2>
+
         <form>
           <TextField
             variant="outlined"
@@ -62,7 +64,6 @@ export default function AddEvent(props) {
           />
           <Button
             type="submit"
-            fullWidth
             variant="contained"
             color="primary"
             onClick={(e) => {

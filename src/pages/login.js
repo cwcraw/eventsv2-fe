@@ -1,12 +1,20 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-// import Link from "@material-ui/core/Link";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 320,
+  },
+}));
 export default function Login(props) {
+  const classes = useStyles();
+
   return (
     <>
-      <form>
+      <form className={classes.formControl}>
         <TextField
           variant="outlined"
           margin="normal"
@@ -41,7 +49,6 @@ export default function Login(props) {
         />
         <Button
           type="submit"
-          fullWidth
           variant="contained"
           color="primary"
           // className={classes.submit}
@@ -52,20 +59,6 @@ export default function Login(props) {
           // disabled={loading || !props.logProps.email || !props.logProps.password}
         >
           Sign In
-        </Button>
-        <Button
-          type="submit"
-          fullWidth
-          variant="contained"
-          color="primary"
-          // className={classes.submit}
-          className=".submit"
-          onClick={(e) => {
-            props.logoutHandler(e);
-          }}
-          // disabled={loading || !props.logProps.email || !props.logProps.password}
-        >
-          Log Out
         </Button>
 
         {/* <Link href="signup" variant="body2">
