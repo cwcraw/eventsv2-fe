@@ -20,7 +20,7 @@ export default function EventsDisplay(props) {
   let eventArray = props.eventsProp.events || [{ event: "" }];
   return (
     <div>
-      <h1>Welcome, {props.homeProp.username}, to your Events Page</h1>
+      <h1>Welcome, {props.homeProp.username}, to your Events Page.</h1>
       <Button
         type="submit"
         variant="contained"
