@@ -121,7 +121,7 @@ export default function App() {
       })
       .then(() => {})
       .catch((error) => {
-        (error);
+        console.log(error);
       });
   }
 
@@ -171,7 +171,6 @@ export default function App() {
       time: editEventState.time,
       note: editEventState.note,
     };
-    console.log(userData);
     axios
       .post("/event", userData)
       .then((response) => {
@@ -193,7 +192,6 @@ export default function App() {
       time: editEventState.time,
       note: editEventState.note,
     };
-    console.log(userData.eventId);
     axios
       .put(`/event/${userData.eventId}`, userData)
 
@@ -210,11 +208,9 @@ export default function App() {
     const authToken = localStorage.getItem("AuthToken");
     axios.defaults.headers.common = { Authorization: `${authToken}` };
     event.preventDefault();
-    console.log(deleteEventState);
     axios
       .delete(`/event/${deleteEventState}`)
       .then((response) => {
-        console.log("Mounting");
         componentWillMountEvents();
       })
       .catch((error) => {
@@ -223,7 +219,6 @@ export default function App() {
   }
 
   function handleSubmitSignUp(event) {
-    console.log("New User");
     event.preventDefault();
     const userData = {
       email: signUpState.email,
