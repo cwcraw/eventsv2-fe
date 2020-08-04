@@ -69,7 +69,6 @@ export default function App() {
     let editObj = editEventState;
     let origObj = {};
     if (eventList.events) {
-      console.log("in if");
       eventList.events.forEach((el) => {
         if (el.eventId === editObj.eventId) {
           origObj = el;
@@ -122,7 +121,7 @@ export default function App() {
       })
       .then(() => {})
       .catch((error) => {
-        console.log(error);
+        (error);
       });
   }
 
