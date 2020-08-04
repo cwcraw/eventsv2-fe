@@ -16,27 +16,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 export default function DeleteEvent(props) {
-    const classes = useStyles();
-    let eventArray = props.eventsProp.events || [{id:'',event:' '}]
+  const classes = useStyles();
+  let eventArray = props.eventsProp.events || [{ id: "", event: " " }];
   return (
-    <> 
-              <h2>Please delete an event here</h2>
+    <>
+      <h2>Please delete an event here:</h2>
 
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Select Event Title</InputLabel>
+        <InputLabel id="demo-simple-select-label">
+          Select Event Title
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           name="eventId"
           id="demo-simple-select"
           value={props.editEventProp.id}
-          onChange={(e) => {props.handleChangeDeleteEvent(e)}}
-        > 
-            {eventArray.map((el) => {
-                return (<MenuItem value={el.eventId}>{el.event}</MenuItem>)
-            })}
+          onChange={(e) => {
+            props.handleChangeDeleteEvent(e);
+          }}
+        >
+          {eventArray.map((el) => {
+            return <MenuItem value={el.eventId}>{el.event}</MenuItem>;
+          })}
         </Select>
       </FormControl>
       <form>

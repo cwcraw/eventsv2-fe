@@ -300,33 +300,4 @@ export default function App() {
     );
   }
 
-  //   return (
-  //     <div>
-  //       <Login
-  //         renderState={"login"}
-  //         logProp={loginState}
-  //         handleChangeLogin={handleChangeLogin}
-  //         handleChangeHome={handleChangeHome}
-  //         handleSubmitLogin={handleSubmitLogin}
-  //         logoutHandler={logoutHandler}
-  //       />
-  //       <EventsDisplay homeProp={homeState} eventsProp={eventList} />
-  //       <AddEventDisplay
-  //         handleChangeEditEvent={handleChangeEditEvent}
-  //         handleSubmitAddEvent={handleSubmitAddEvent}
-  //       />
-  //       <EditEventDisplay
-  //         eventsProp={eventList}
-  //         editEventProp={editEventState}
-  //         handleChangeEditEvent={handleChangeEditEvent}
-  //         handleSubmitEditEvent={handleSubmitEditEvent}
-  //       />
-  //       <DeleteEventDisplay
-  //         eventsProp={eventList}
-  //         editEventProp={editEventState}
-  //         handleChangeDeleteEvent={handleChangeDeleteEvent}
-  //         handleSubmitDeleteEvent={handleSubmitDeleteEvent}
-  //       />
-  //     </div>
-  //   );
 }

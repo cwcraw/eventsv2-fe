@@ -8,7 +8,6 @@ import NotesIcon from "@material-ui/icons/Notes";
 import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-
 export default function Home(props) {
   return (
     <div>
@@ -52,8 +51,6 @@ export default function Home(props) {
           <ListItemText primary="Logout" />
         </ListItem>
       </List>
-
-      {/* <div>{props.renderProp.render ? <Account account = {props.homeProp} /> : <Events />}</div> */}
     </div>
   );
 }

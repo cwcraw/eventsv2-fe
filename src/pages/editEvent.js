@@ -18,22 +18,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AddEvent(props) {
-    const classes = useStyles();
-    let eventArray = props.eventsProp.events || [{id:'',event:' '}]
+  const classes = useStyles();
+  let eventArray = props.eventsProp.events || [{ id: "", event: " " }];
   return (
-    <> 
-          <h2>Please edit your events here</h2>
+    <>
+      <h2>Please edit your events here:</h2>
 
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Select Event Title</InputLabel>
+        <InputLabel id="demo-simple-select-label">
+          Select Event Title
+        </InputLabel>
         <Select
           name="eventId"
           value={props.editEventProp.id}
-          onChange={(e) => {props.handleChangeEditEvent(e)}}
-        > 
-            {eventArray.map((el) => {
-                return (<MenuItem value={el.eventId}>{el.event}</MenuItem>)
-            })}
+          onChange={(e) => {
+            props.handleChangeEditEvent(e);
+          }}
+        >
+          {eventArray.map((el) => {
+            return <MenuItem value={el.eventId}>{el.event}</MenuItem>;
+          })}
         </Select>
       </FormControl>
       <form>

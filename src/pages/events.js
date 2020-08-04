@@ -9,7 +9,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 
-
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -19,25 +18,20 @@ const useStyles = makeStyles({
 export default function EventsDisplay(props) {
   const classes = useStyles();
   let eventArray = props.eventsProp.events || [{ event: "" }];
-  console.log(eventArray);
   return (
     <div>
-      <h1>
-      Welcome, {props.homeProp.username}, to your Events Page
-      </h1>
+      <h1>Welcome, {props.homeProp.username}, to your Events Page</h1>
       <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          // className={classes.submit}
-          className=".submit"
-          onClick={(e) => {
-            props.logoutHandler(e);
-          }}
-          // disabled={loading || !props.logProps.email || !props.logProps.password}
-        >
-          Log Out
-        </Button>
+        type="submit"
+        variant="contained"
+        color="primary"
+        className=".submit"
+        onClick={(e) => {
+          props.logoutHandler(e);
+        }}
+      >
+        Log Out
+      </Button>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>

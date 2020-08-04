@@ -25,8 +25,6 @@ export default function Login(props) {
           name="email"
           autoComplete="email"
           autoFocus
-          // helperText={errors.email}
-          // error={errors.email ? true : false}
           onBlur={(e) => {
             props.handleChangeLogin(e);
           }}
@@ -41,8 +39,6 @@ export default function Login(props) {
           type="password"
           id="password"
           autoComplete="current-password"
-          // helperText={errors.password}
-          // error={errors.password ? true : false}
           onBlur={(e) => {
             props.handleChangeLogin(e);
           }}
@@ -51,19 +47,13 @@ export default function Login(props) {
           type="submit"
           variant="contained"
           color="primary"
-          // className={classes.submit}
           className=".submit"
           onClick={(e) => {
             props.handleSubmitLogin(e);
           }}
-          // disabled={loading || !props.logProps.email || !props.logProps.password}
         >
           Sign In
         </Button>
-
-        {/* <Link href="signup" variant="body2">
-          {"Don't have an account? Sign Up"}
-        </Link> */}
       </form>
     </>
   );
